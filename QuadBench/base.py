@@ -3,6 +3,18 @@ import time
 def calc_time(time1, time2):
   return time2 - time1
 
+def calc_score(scores):
+  length = len(scores)
+  total = 0
+
+  for s in scores:
+    total += s
+
+  total /= length
+  # Round it and muliply by 100 so scores are more exact without having a billion decimals
+  return round(total * 100)
+
+
 # No. I will not do this using some other, less retarded method.
 def start_message():
   print("\033[91m") # Make this fucker red

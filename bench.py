@@ -16,6 +16,8 @@ start = time.time()
 # Save for later
 absolute_start = start
 
+scores = []
+
 ##
 # Multiplier test
 ##
@@ -29,6 +31,7 @@ for i in range(0,25):
 finish = time.time()
 
 time_multiplier = base.calc_time(start, finish)
+scores.append(time_multiplier)
 
 print("\n\033[92mMultiplier took " + str(round(time_multiplier, 2)) + " seconds\033[0m\n")
 
@@ -48,6 +51,9 @@ for i in range(0,901):
 finish = time.time()
 
 time_squares = base.calc_time(start, finish)
+scores.append(time_squares)
 
 print("\n\033[92m" + "Squares took " + str(round(time_squares, 2)) + " seconds\033[0m\n")
+
+print("" + "Your final score is \033[92m" + str(base.calc_score(scores)) + " points\033[0m\n. (Lower is better)")
 
